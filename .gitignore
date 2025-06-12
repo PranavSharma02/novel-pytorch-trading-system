@@ -1,3 +1,5 @@
+# MAREA-Ensemble Git Ignore File
+
 # Python
 __pycache__/
 *.py[cod]
@@ -19,14 +21,16 @@ wheels/
 *.egg-info/
 .installed.cfg
 *.egg
+MANIFEST
 
-# PyTorch
+# PyTorch Models (too large for git)
 *.pth
 *.pt
-*.ckpt
+*.pkl
 
-# Jupyter Notebook
+# Jupyter Notebooks
 .ipynb_checkpoints
+*.ipynb
 
 # Environment
 .env
@@ -37,7 +41,7 @@ ENV/
 env.bak/
 venv.bak/
 
-# IDE
+# IDEs
 .vscode/
 .idea/
 *.swp
@@ -57,12 +61,34 @@ Thumbs.db
 *.log
 logs/
 
-# Data files (optional - uncomment if you want to exclude data)
-# *.csv
-# Data/
+# Temporary files
+*.tmp
+*.temp
+temp/
 
-# Model outputs
-*.png
-*.jpg
-*.jpeg
-Figures/ 
+# Research outputs
+results/
+outputs/
+plots/
+figures/
+
+# Data files (keep structure but not large files)
+Data/*.csv
+!Data/README.md
+
+# Model checkpoints
+checkpoints/
+saved_models/
+
+# Experimental files
+experimental/
+scratch/
+test_*.py
+
+# Performance results
+performance_*.json
+backtest_*.csv
+
+# Cache
+.cache/
+.pytest_cache/ 
